@@ -59,7 +59,7 @@ class Wizard extends Container implements IWizard {
 	 * @return SessionSection
 	 */
 	protected function getSection() {
-		return $this->session->getSection('wizard' . $this->getName())->setExpiration($this->expiration);
+		return $this->session->getSection(get_class($this))->setExpiration($this->expiration);
 	}
 
 	private function resetSection() {
